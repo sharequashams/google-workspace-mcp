@@ -1,0 +1,40 @@
+{
+  "name": "google-workspace-mcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "auth": "ts-node scripts/google-auth.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "google-auth-library": "^11.2.0",
+    "googleapis": "^185.0.0",
+    "pino": "^10.4.0",
+    "pino-pretty": "^13.2.0",
+    "zod": "^4.6.5",
+    "zod-to-json-schema": "^3.25.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@typescript-eslint/eslint-plugin": "^8.71.1",
+    "@typescript-eslint/parser": "^8.71.1",
+    "eslint": "^9.39.5",
+    "prettier": "^3.9.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3"
+  }
+}

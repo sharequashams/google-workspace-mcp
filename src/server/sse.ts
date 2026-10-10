@@ -105,10 +105,10 @@ export async function runSseServer() {
     }
   });
 
-  app.listen(config.PORT, () => {
-    console.error(`Google Workspace MCP SSE server running on http://localhost:${config.PORT}`);
-    console.error(`SSE endpoint: http://localhost:${config.PORT}/sse`);
-    console.error(`Message endpoint: http://localhost:${config.PORT}/message`);
-    console.error(`Login endpoint: http://localhost:${config.PORT}/auth/login`);
+  app.listen(config.PORT, '0.0.0.0', () => {
+    console.error(`Google Workspace MCP SSE server running on http://0.0.0.0:${config.PORT}`);
+    console.error(`SSE endpoint: http://0.0.0.0:${config.PORT}/sse`);
+    console.error(`Message endpoint: http://0.0.0.0:${config.PORT}/message`);
+    console.error(`Login endpoint: http://0.0.0.0:${config.PORT}/auth/login`);
   });
 }

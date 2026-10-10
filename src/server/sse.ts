@@ -49,7 +49,22 @@ export async function runSseServer() {
   });
 
   // Adding basic OAuth endpoints for ease of setup on Cloud
+  app.get('/', (req, res) => {
+    res.send(`
+      <h1>Google Workspace MCP Server</h1>
+      <p>The server is running successfully!</p>
+      <ul>
+        <li><a href="/auth/login">Authenticate with Google</a></li>
+        <li>SSE Endpoint: <code>/sse</code></li>
+      </ul>
+    `);
+  });
+
   app.get('/auth/login', (req, res) => {
+    if (!config.GOOGLE_CLIENT_ID || !config.GOOGLE_CLIENT_SECRET) {
+      res.status(500).send('Error: GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET is missing in environment variables.');
+      return;
+    }
     const scopes = [
       config.GOOGLE_GMAIL_SCOPE,
       config.GOOGLE_DOCS_SCOPE,
